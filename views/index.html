@@ -83,6 +83,7 @@
   </nav>
   <!-- OTHERS ELEMENTS OF DOM -->
   <div id="app">
+    <!-- THE FIRST PANEL OF DATAS -->
     <section class="search__container">
       <div class="search__container__header">
         <div class="left__item">Comment pouvons-nous vous aider ?</div>
@@ -102,11 +103,12 @@
         </form>
       </div>
     </section>
+    <!-- SECOND PANEL OF DATAS -->
     <section class="article__container">
       <!-- THE CONTAINER OF DATAS -->
       <div>
         <!-- LOAD THE CARD OF CATEGORIES -->
-        <div class="article__card" :class="{'active': config.hidden, 'loadingCursor': config.isLoading}" v-for="data in datas" v-bind:key="data._id" v-on:click="load_arcticles(data.guid, data.category, data.nbr_article)" disabled="isDisabled">
+        <div class="article__card" :class="{'active': config.hidden, 'loadingCursor': config.isLoading}" v-for="data in datas" v-bind:key="data._id" v-on:click="load_arcticles(data.guid, data.category, data.nbr_article)" :disabled="config.isDisabled">
           <div class="article__logo">
             <img :src="data.image" alt="article_image">
           </div>
@@ -116,7 +118,7 @@
           </div>
         </div>
         <!-- LOAD THE ARTICLES CATEGORIES AFTER CLICK -->
-        <div class="articles__list" :class="{'active': !config.hidden}">
+        <div class="articles__list" :class="{'active': config.hidden2, 'loadingCursor': config.isLoading2}">
           <div class="list__card__header">
             <div class="logo__div">
               <img :src="articleConfig.image" alt="article_image_header">
@@ -126,9 +128,30 @@
               <div class="article__subname">{{ articleConfig.nbr }} <span>articles dans cette catégories</span></div>
             </div>
           </div>
-          <div class="list__card" :class="{'active': !config.hidden}" v-for="data in showArticles" v-bind:key="data._id">
+          <div
+            class="list__card"
+            :class="{'loadingCursor': config.isLoading2}"
+            v-for="data in articleDatas"
+            v-bind:key="data._id"
+            v-on:click="loadArticleRersource(data._id)"
+            :disabled="config.isDisabled2">
             <div class="article__name">{{ data.name }}</div>
             <div class="article__subname">{{ data.created }}</div>
+          </div>
+        </div>
+        <!-- LOAD THE ARTICLE DETAILS -->
+        <div class="article__description" :style="{'display': display}">
+          <div class="article__description__title">
+            {{ articleDetails.name }}
+          </div>
+          <div class="article__description__content">
+            {{ articleDetails.description }}
+          </div>
+          <div class="article__description__image">
+            <img src="https://via.placeholder.com/586x220" alt="">
+          </div>
+          <div class="article__description__content">
+            {{ articleDetails.description }}
           </div>
         </div>
       </div>
@@ -142,11 +165,17 @@ const app = Vue.createApp({
     return {
       datas: [],
       articleDatas: [],
-      showArticles: [],
+      articleDetails: {},
+      display: 'none',
       config: {
+        // FIRST PANEL
         hidden: false,
+        isLoading: false,
         isDisabled: false,
-        isLoading: false
+        // SECOND PANEL
+        hidden2: true,
+        isLoading2: false,
+        isDisabled2: false
       },
       articleConfig: {
         name: null,
@@ -164,24 +193,26 @@ const app = Vue.createApp({
         .then((response) => {
           response.data.forEach(resp => {
             this.datas.push(resp.categories)
-            console.clear()
+            // console.clear()
           })
         })
         .catch((error) => {
-          console.log(error);
+          // console.clear()
+          // console.log(error);
         });
     },
     load_arcticles(guid, category, nbr) {
-      this.config.isLoading = true
+      this.config.isLoading  = true
       this.config.isDisabled = true
       this.getArticleDatasByGuid(guid)
     },
     getArticleDatasByGuid(guid) {
       axios.get(`/category/${guid}`)
         .then((response) => {
-          console.log(response.data)
           window.setTimeout(() => {
             this.config.hidden     = true
+            this.config.hidden2    = false
+            this.config.hidden3    = true
             this.config.isLoading  = false
             this.config.isDisabled = false
           }, 1300)
@@ -192,27 +223,38 @@ const app = Vue.createApp({
             this.articleConfig.nbr   = resp.article_list.nbr_article
             this.articleConfig.image = resp.article_list.image
           })
-          // TRUNCATE THE DATA FOR 4 ITEMS TO DISPLAY
-          this.showArticles.push(this.articleDatas[0])
-          this.showArticles.push(this.articleDatas[1])
-          this.showArticles.push(this.articleDatas[2])
-          this.showArticles.push(this.articleDatas[3])
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    getArticle(guid) {
+    loadArticleRersource(guid) {
+      this.config.isLoading2  = true
+      this.config.isDisabled2 = true
+
       axios.get(`/article/${guid}`)
         .then((response) => {
-          console.log(response)
+          window.setTimeout(() => {
+            this.config.hidden      = true
+            this.config.hidden2     = true
+            this.display            = ""
+            this.config.isLoading2  = false
+            this.config.isDisabled2 = false
+          }, 1300)
+          response.data.forEach(resp => {
+            this.articleDetails = resp.articles
+            console.log(resp.articles)
+          })
         })
         .catch((error) => {
+          // console.clear()
           // console.log(error);
         });
     }
   }
-}).mount("#app")
+})
+
+app.mount("#app")
 </script>
 
 </html>

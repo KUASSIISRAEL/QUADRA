@@ -36,7 +36,7 @@ async function getCategories(req, res) {
 
 // PROCCED TO CREATE FUNCTION TO GET DATAS
 async function getArticle(req, res) {
-  await bucket.query(N1qlQuery.fromString(queryOne(req.params.guid)), (err, rows) => {
+  await bucket.query(N1qlQuery.fromString(queryOneA(req.params.guid)), (err, rows) => {
     if (err)
       res
       .json(err)
@@ -72,5 +72,6 @@ async function filter(req, res) {
 
 module.exports = {
   filter,
-  getCategories
+  getArticle,
+  getCategories,
 }

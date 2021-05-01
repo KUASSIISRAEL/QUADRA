@@ -28,7 +28,7 @@ router.get('/category/:guid', (req, res, next) => {
 
 /* GET articles datas. */
 router.get('/article/:guid', (req, res, next) => {
-  getArticles(req, res)
+  getArticle(req, res)
 });
 
 

@@ -8,7 +8,7 @@ const queryAC = (value) => {
 }
 
 const queryOneA = (value) => {
-  return `guid, name, picture, created FROM articles WHERE guid='${value}'`
+  return `SELECT * FROM articles WHERE guid='${value}'`
 }
 
 

@@ -5,7 +5,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
   background: #F2F7F9 0% 0% no-repeat padding-box;
 }
@@ -195,6 +195,7 @@ form input:focus {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  cursor: pointer;
 }
 
 .list__card__header {
@@ -258,3 +259,39 @@ form input:focus {
   letter-spacing: 0px;
   color: #5E738B;
 }
+
+.article__description {
+  width: 746px;
+  height: auto;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 3px #00000029;
+  border-radius: 4px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.article__description__title {
+  width: 506px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  padding-right: 80px;
+  text-align: left;
+  font-size: 33px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #2C3E50;
+}
+
+.article__description__content {
+  width: 586px;
+  text-align: left;
+  font: normal normal normal 14px/19px Open Sans;
+  letter-spacing: 0px;
+  color: #5E738B;
+  padding-bottom: 10px;
+}
+
+/*CREATE THE RESPONSIVITY*/
