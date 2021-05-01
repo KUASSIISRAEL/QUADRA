@@ -1,24 +1,33 @@
 const express = require('express');
 const router  = express.Router();
 
-const { getArticles }   = require('../controllers/article')
-const { getCategories } = require('../controllers/category')
+const {
+  filter,
+  getArticle,
+  getCategories
+} = require('../controllers/index')
 
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  getCategories(req, res)
+  res.render('index')
 });
 
 
-/* GET categories page. */
+/* GET categories datas. */
 router.get('/categories', (req, res, next) => {
   getCategories(req, res)
 });
 
 
-/* GET articles page. */
-router.get('/articles', function(req, res, next) {
+/* GET categories datas. */
+router.get('/category/:guid', (req, res, next) => {
+  getCategories(req, res)
+});
+
+
+/* GET articles datas. */
+router.get('/article/:guid', (req, res, next) => {
   getArticles(req, res)
 });
 
