@@ -334,6 +334,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   padding-left: 15px;
+  cursor: pointer;
 }
 
 
@@ -393,4 +394,118 @@ main {
   text-transform: uppercase;
   font-weight: normal;
   color: green;
+}
+
+
+/*ARTICLE DESCRIPTION CSS CODE*/
+.article__description__container {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.article__description__card {
+  width: 746px;
+  height: auto;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 1px #00000029;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.article__description__card__title {
+  width: 586px;
+  height: 68px;
+  text-align: left;
+  font-weight: bolder;
+  font-size: 24px;
+  font: normal normal bold 24px/33px Open Sans;
+  letter-spacing: 0px;
+  color: #2C3E50;
+  padding-top: 10px;
+  text-transform: capitalize;
+}
+
+.article__description__card__content {
+  width: 586px;
+  height: auto;
+  font-weight: bolder;
+  font-size: 14px;
+  text-align: justify;
+  font: normal normal normal 14px/19px Open Sans;
+  letter-spacing: 0px;
+  color: #5E738B;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.article__description__card__image {
+  width: 586px;
+  height: 220px;
+  position: relative;
+  background: #E1E5EC 0% 0% no-repeat padding-box;
+}
+
+.article__description__card__image img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.article__description__card__footer {
+  width: 646px;
+  height: 91px;
+  background: #F2F7F9 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-left: 50px;
+}
+
+.article__description__card__footer>div {
+  width: 50%;
+}
+
+.emoticons__container {
+  display: flex;
+}
+
+.satisfaction__smile,
+.satisfaction__not__smile,
+.satisfaction__not__enjoy {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  margin-right: 20px;
+}
+
+.satisfaction__smile img,
+.satisfaction__not__smile img,
+.satisfaction__not__enjoy img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article__description__question {
+  text-align: left;
+  font-size: 14px;
+  font-weight: normal;
+  font: normal normal bold 14px/19px Open Sans;
+  letter-spacing: 0px;
+  color: #5E738B;
 }

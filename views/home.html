@@ -160,7 +160,7 @@
         <!-- CONTENT BODY -->
         <div class="articles__section__body">
           <!-- ONE ITEM -->
-          <div class="articles__section__body__item" v-for="article in articleList" v-bind:key="article._id">
+          <div class="articles__section__body__item" v-for="article in articleList" v-bind:key="article._id" @click="getArticleInfos(article._id)">
             <div class="category__labels">
               <div><strong class="label__title">{{ article.name }}</strong></div>
               <div class="label__subtitle">{{ article.created }}</div>
@@ -173,7 +173,7 @@
     <!-- SEARCH RESULT SECTION -->
     <section class="search__result__container" :style="{'display': config.phaseOne.searchState}">
       <div class="search__result__card">
-        <div class="search__item__card" v-for="data in searchDatas" v-bind:key="data._id">
+        <div class="search__item__card" v-for="data in searchDatas" v-bind:key="data._id" @click="getArticleInfos(data._id)">
           <div class="search__item__card__name">
             Name: &nbsp;{{ data.name }}
           </div>
@@ -185,6 +185,40 @@
       </div>
     </section>
     <!-- END SEARCH RESULT SECTION -->
+    <!-- BEGIN OF ARTICLE DESCRIPTION PART -->
+    <section class="article__description__container" :style="{'display': config.phaseOne.display3}">
+      <div class="article__description__card">
+        <div class="article__description__card__title">
+          {{ articleDesc.name }}
+        </div>
+        <div class="article__description__card__content">
+          {{ articleDesc.description }}
+        </div>
+        <div class="article__description__card__image">
+          <img src="https://via.placeholder.com/150x150" alt="">
+        </div>
+        <div class="article__description__card__content">
+          {{ articleDesc.description }}
+        </div>
+        <div class="article__description__card__footer">
+          <div class="article__description__question">
+            Ces informations vous-ont elles été utiles ?
+          </div>
+          <div class="emoticons__container">
+            <div class="satisfaction__smile">
+              <img src="/images/Image 1@2x.png" alt="smile">
+            </div>
+            <div class="satisfaction__not__smile">
+              <img src="/images/Image 3@2x.png" alt="not_smile">
+            </div>
+            <div class="satisfaction__not__enjoy">
+              <img src="/images/Image 2@2x.png" alt="not_enjoy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END OF ARTICLE DESCRIPTION PART -->
   </main>
   <!-- END FOR THE MAIN CONTENT -->
 </body>
