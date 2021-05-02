@@ -1,0 +1,296 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #F2F7F9 0% 0% no-repeat padding-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/* THE NAV BAR CONTENT*/
+header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  position: relative;
+}
+
+header nav {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 220px;
+  height: 100%;
+  background: transparent linear-gradient(90deg, #2079B7 0%, #3598DC 100%) 0% 0% no-repeat padding-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__profil {
+  width: calc(100% - 220px);
+  height: 100%;
+  background: transparent linear-gradient(270deg, #3598DC 0%, #2079B7 100%) 0% 0% no-repeat padding-box;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+/*THE SEARCH PART CSS*/
+main {
+  width: 100%;
+  height: 181px;
+  background: #3598DC 0% 0% no-repeat padding-box;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container>div {
+  width: 746px;
+  height: 48px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container div form {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.container div form input {
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: absolute;
+  padding-left: 30px;
+}
+
+.container div form input:focus {
+  outline: none;
+}
+
+.container div form span {
+  top: 15px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.search__tile__left p {
+  text-align: left;
+  font-size: 24px;
+  font-weight: bolder;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+.search__tile__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search__tile__right p {
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  margin-left: 3px;
+}
+
+
+/*CARD CATEGORIES LIST RESULTS CONTENTS*/
+.result__container {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result__content {
+  width: 746px;
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.category__card {
+  width: 100%;
+  height: 120px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 1px #00000029;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.category__card>div:nth-of-type(1) {
+  width: 12%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category__card>div:nth-of-type(1) img {
+  width: 42px;
+  height: 43px;
+}
+
+.category__card>div:nth-of-type(2) {
+  width: 88%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.category__labels {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.category__labels>div {
+  align-self: flex-start;
+}
+
+.label__title {
+  text-align: left;
+  font-weight: bolder;
+  font-size: 18px;
+  font: normal normal bold 18px/24px Open Sans;
+  letter-spacing: 0px;
+  color: #2C3E50;
+}
+
+.label__subtitle {
+  text-align: left;
+  font-size: 14px;
+  font-weight: bolder;
+  font: normal normal normal 14px/19px Open Sans;
+  letter-spacing: 0px;
+  color: #5E738B;
+}
+
+
+/*ARTICLES LIST CARD CSS CODE*/
+.articles__list__container {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.articles__section {
+  width: 746px;
+  height: auto;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 1px #00000029;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.articles__card {
+  width: 100%;
+  height: 120px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 1px #00000029;
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.articles__card>div:nth-of-type(1) {
+  width: 12%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.articles__card>div:nth-of-type(1) img {
+  width: 42px;
+  height: 43px;
+}
+
+.articles__card>div:nth-of-type(2) {
+  width: 88%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.articles__section__body {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.articles__section__body__item {
+  width: 666px;
+  height: 80px;
+  background: #F2F7F9 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15px;
+}
