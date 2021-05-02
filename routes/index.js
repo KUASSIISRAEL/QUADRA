@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 
 const {
-  filter,
+  filtering,
   getArticle,
   getCategories
 } = require('../controllers/index')
@@ -12,11 +12,6 @@ const {
 router.get('/', (req, res, next) => {
   res.render('home')
 });
-
-
-// router.get('/', (req, res, next) => {
-//   res.render('index')
-// });
 
 
 /* GET categories datas. */
@@ -35,6 +30,13 @@ router.get('/category/:guid', (req, res, next) => {
 router.get('/article/:guid', (req, res, next) => {
   getArticle(req, res)
 });
+
+
+/* GET search datas results. */
+router.get('/search', (req, res, next) => {
+  filtering(req, res)
+});
+
 
 
 module.exports = router;

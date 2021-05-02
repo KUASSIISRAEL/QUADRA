@@ -8,53 +8,53 @@
   "articles": [
   {
     "_id": "d4ab45bb-6822-4057-afda-e1d348073e63",
-    "name": "Roi Arthur",
+    "name": "roi arthur",
     "created": "2016-36-1 00:03:62"
   },
   {
     "_id": "ef3a9cfa-d3ea-4df1-904d-dc202539d9ef",
     "created": "2019-1-2 22:04:21",
-    "name": "Nicky lawson"
+    "name": "nicky lawson"
   },
   {
     "_id": "849fa1c9-4607-49c1-be07-58bbd9a76312",
     "created": "2016-16-5 06:08:16",
-    "name": "Spider Man"
+    "name": "spider man"
   },
   {
     "_id": "de736b39-1dcd-4b07-be17-d105fee97ec3",
     "created": "2018-27-4 23:11:65",
-    "name": "Sabrina"
+    "name": "sabrina"
   },
   {
     "_id": "e506b153-79ed-42d4-bebf-57962a3902ce",
     "created": "2020-17-1 07:08:50",
-    "name": "Annabelle"
+    "name": "annabelle"
   },
   {
     "_id": "f32690d2-1646-40a9-a187-8bcd3b04559f",
     "created": "2016-32-1 07:10:99",
-    "name": "One Time"
+    "name": "one time"
   },
   {
     "_id": "0309c72e-cbae-488c-92e2-0e1482c7565f",
     "created": "2021-38-2 01:01:84",
-    "name": "Taken"
+    "name": "taken"
   },
   {
     "_id": "badb070d-fa95-4b0b-80af-1acd17562ff8",
     "created": "2019-35-6 20:07:22",
-    "name": "Iron Man"
+    "name": "iron man"
   },
   {
     "_id": "ea49d3a8-67e5-4c34-94df-8072063af841",
     "created": "2016-24-1 15:07:41",
-    "name": "Soif de Vengeance"
+    "name": "soif de vengeance"
   },
   {
     "_id": "e34a1c8d-6096-4b3d-b16f-db2d4d302c4c",
     "created": "2020-57-0 10:09:85",
-    "name": "Predator"
+    "name": "predator"
   }],
   "created": "2017-38-1 02:10:40"
 },
@@ -68,22 +68,22 @@
   {
     "_id": "d4ab45bb-6822-4057-afda-e1d348073e63",
     "created": "2016-36-1 00:03:62",
-    "name": "Roi Arthur"
+    "name": "roi arthur"
   },
   {
     "_id": "ef3a9cfa-d3ea-4df1-904d-dc202539d9ef",
     "created": "2019-1-2 22:04:21",
-    "name": "Nicky lawson"
+    "name": "nicky lawson"
   },
   {
     "_id": "230af7ab-983e-435a-ad78-5d1c97f9bd95",
     "created": "2017-0-3 08:04:19",
-    "name": "Alice au pays des merveilles"
+    "name": "alice au pays des merveilles"
   },
   {
     "_id": "849fa1c9-4607-49c1-be07-58bbd9a76312",
     "created": "2016-16-5 06:08:16",
-    "name": "Spider Man"
+    "name": "spider man"
   }],
   "created": "2019-25-2 22:09:40"
 },
@@ -97,22 +97,22 @@
   {
     "_id": "badb070d-fa95-4b0b-80af-1acd17562ff8",
     "created": "2019-35-6 20:07:22",
-    "name": "Iron Man"
+    "name": "iron man"
   },
   {
     "_id": "e506b153-79ed-42d4-bebf-57962a3902ce",
     "created": "2020-17-1 07:08:50",
-    "name": "Annabelle"
+    "name": "annabelle"
   },
   {
     "_id": "ea49d3a8-67e5-4c34-94df-8072063af841",
     "created": "2016-24-1 15:07:41",
-    "name": "Soif de Vengeance"
+    "name": "soif de vengeance"
   },
   {
     "_id": "e34a1c8d-6096-4b3d-b16f-db2d4d302c4c",
     "created": "2020-57-0 10:09:85",
-    "name": "Predator"
+    "name": "predator"
   }],
   "created": "2020-3-4 02:10:23"
 }]

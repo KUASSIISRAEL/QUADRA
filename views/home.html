@@ -10,6 +10,7 @@
   <script src="https://use.fontawesome.com/caee778f29.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
   <script type="module" src="/javascripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <title>Quadra Diffusion</title>
 </head>
 
@@ -83,8 +84,13 @@
         </svg>
       </div>
       <div class="nav__profil">
-        <div>1</div>
-        <div>2</div>
+        <div class="nav__profil__item">
+          <div class="image"></div>
+          <div class="near__image">
+            <div class="near__image__title">Quadra Diffusion</div>
+            <div class="near__image__subtitle">Nord</div>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -112,78 +118,73 @@
         </div>
       </div>
       <div>
-        <form>
-          <input type="search" placeholder="Rechercher des réponses...">
-          <span><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <form @submit.prevent="searchArticles">
+          <input v-model="search" type="search" placeholder="Rechercher des réponses...">
+          <span>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
               <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
-            </svg></span>
+            </svg>
+          </span>
         </form>
       </div>
       <!-- END OF SEARCH PART -->
     </section>
     <!-- BEGIN THE RESULTS LIST CONTENT -->
-    <section class="result__container">
+    <section class="result__container" :style="{'display': config.phaseOne.display1}">
       <div class="result__content">
-        <div class="category__card">
+        <div class="category__card" v-for="category in categoryList" v-bind:key="category._id" v-bind:value="category._id" @click="articleListResult(category.guid, category.category, category.nbr_article, category.image)">
           <div>
-            <img src="/images/call-center-agent@2x.png" alt="call-center-agent" width="42" height="43">
+            <img :src="category.image" alt="call-center-agent" width="42" height="43">
           </div>
           <div class="category__labels">
-            <div><strong class="label__title">Nom de la catégorie</strong></div>
-            <div class="label__subtitle">12 articles dans cette catégorie</div>
-          </div>
-        </div>
-        <div class="category__card">
-          <div>
-            <img src="/images/repaired@2x.png" alt="repaired">
-          </div>
-          <div class="category__labels">
-            <div><strong class="label__title">Nom de la catégorie</strong></div>
-            <div class="label__subtitle">12 articles dans cette catégorie</div>
-          </div>
-        </div>
-        <div class="category__card">
-          <div>
-            <img src="/images/life-preserver@2x.png" alt="life-preserver">
-          </div>
-          <div class="category__labels">
-            <div><strong class="label__title">Nom de la catégorie</strong></div>
-            <div class="label__subtitle">12 articles dans cette catégorie</div>
+            <div><strong class="label__title">{{ category.category }}</strong></div>
+            <div class="label__subtitle">{{ category.nbr_article }} &nbsp;articles dans cette catégorie</div>
           </div>
         </div>
       </div>
     </section>
     <!-- END OF THE RESULTS LIST CONTENT -->
     <!-- BEGIN OF CATEGORY WITH THEM ARTICLES LIST -->
-    <section class="articles__list__container">
+    <section class="articles__list__container" :style="{'display': config.phaseOne.display2}">
       <div class="articles__section">
         <!-- CONTENT HEADER -->
         <div class="articles__card">
           <div>
-            <img src="/images/call-center-agent@2x.png" alt="call-center-agent" width="42" height="43">
+            <img :src="config.phaseTwo.categoryImage" alt="call-center-agent" width="42" height="43">
           </div>
           <div class="category__labels">
-            <div><strong class="label__title">Nom de la catégorie</strong></div>
-            <div class="label__subtitle">12 articles dans cette catégorie</div>
+            <div><strong class="label__title">{{ config.phaseTwo.categoryTitle }}</strong></div>
+            <div class="label__subtitle">{{ config.phaseTwo.categoryNumber }} &nbsp;articles dans cette catégorie</div>
           </div>
         </div>
         <!-- CONTENT BODY -->
         <div class="articles__section__body">
           <!-- ONE ITEM -->
-          <div class="articles__section__body__item">
+          <div class="articles__section__body__item" v-for="article in articleList" v-bind:key="article._id">
             <div class="category__labels">
-              <div><strong class="label__title">Nom de la catégorie</strong></div>
-              <div class="label__subtitle">12 articles dans cette catégorie</div>
+              <div><strong class="label__title">{{ article.name }}</strong></div>
+              <div class="label__subtitle">{{ article.created }}</div>
             </div>
           </div>
-          <!-- SECOND ITEM -->
-          <div class="articles__section__body__item">2</div>
-          <div class="articles__section__body__item">3</div>
-          <!-- MORE ITEMS -->
         </div>
       </div>
     </section>
     <!-- END OF CATEGORY WITH THEM ARTICLES LIST -->
+    <!-- SEARCH RESULT SECTION -->
+    <section class="search__result__container" :style="{'display': config.phaseOne.searchState}">
+      <div class="search__result__card">
+        <div class="search__item__card" v-for="data in searchDatas" v-bind:key="data._id">
+          <div class="search__item__card__name">
+            Name: &nbsp;{{ data.name }}
+          </div>
+          <div class="search__item__card__company">
+            <em>Company: &nbsp;{{ data.company }}</em>
+          </div>
+          <div class="search__item__card__price">{{ data.balance }}</div>
+        </div>
+      </div>
+    </section>
+    <!-- END SEARCH RESULT SECTION -->
   </main>
   <!-- END FOR THE MAIN CONTENT -->
 </body>

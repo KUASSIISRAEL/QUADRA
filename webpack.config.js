@@ -7,5 +7,5 @@ module.exports = {
     path: path.join(__dirname, 'public/javascripts'),
     filename: 'main.js'
   },
-  mode: 'development'
+  mode: 'production'
 }

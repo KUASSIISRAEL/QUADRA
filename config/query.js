@@ -11,8 +11,13 @@ const queryOneA = (value) => {
   return `SELECT * FROM articles WHERE guid='${value}'`
 }
 
+const filter = (value) => {
+  return `SELECT * FROM articles WHERE name LIKE "%${value}%"`
+}
+
 
 module.exports = {
+  filter,
   queryC,
   queryA,
   queryAC,

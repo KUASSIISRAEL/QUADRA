@@ -50,6 +50,44 @@ header nav {
   align-items: center;
 }
 
+.nav__profil__item {
+  width: 160px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image {
+  width: 26px;
+  height: 26px;
+  padding-right: 5px;
+  background: transparent url('/images/Logo_Quadra.png') 0% 0% no-repeat padding-box;
+}
+
+.near__image {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.near__image__title {
+  text-align: left;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+.near__image__subtitle {
+  text-align: left;
+  font: normal normal normal 11px/15px Open Sans;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+
+}
+
 
 /*THE SEARCH PART CSS*/
 main {
@@ -165,6 +203,7 @@ main {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 
 .category__card>div:nth-of-type(1) {
@@ -203,6 +242,7 @@ main {
   text-align: left;
   font-weight: bolder;
   font-size: 18px;
+  text-transform: capitalize;
   font: normal normal bold 18px/24px Open Sans;
   letter-spacing: 0px;
   color: #2C3E50;
@@ -226,6 +266,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .articles__section {
@@ -293,4 +334,63 @@ main {
   justify-content: flex-start;
   align-items: center;
   padding-left: 15px;
+}
+
+
+/*SEARCH RESULT CSS CODE*/
+.search__result__container {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.search__result__card {
+  width: 746px;
+  height: auto;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 1px #00000029;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search__item__card {
+  width: 666px;
+  height: 60px;
+  background: #F2F7F9 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search__item__card__name {
+  font-size: 18px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: blue;
+}
+
+.search__item__card__company {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: gray;
+}
+
+.search__item__card__price {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: green;
 }

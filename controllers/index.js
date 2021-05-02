@@ -5,6 +5,7 @@ const {
   N1qlQuery
 } = require('../config/db');
 const {
+  filter,
   queryA,
   queryC,
   queryAC,
@@ -53,8 +54,8 @@ async function getArticle(req, res) {
 
 
 // PROCCED TO CREATE FUNCTION TO GET DATAS
-async function filter(req, res) {
-  await bucket.query(N1qlQuery.fromString(queryA), (err, rows) => {
+async function filtering(req, res) {
+  await bucket.query(N1qlQuery.fromString(filter(req.query.search)), (err, rows) => {
     if (err)
       res
       .json(err)
@@ -71,7 +72,7 @@ async function filter(req, res) {
 
 
 module.exports = {
-  filter,
+  filtering,
   getArticle,
   getCategories,
 }
