@@ -63,7 +63,7 @@ ___
 # Faire le BACKUP
 	- Créer un dossier backup-42 à la racine dans mon cas c'est le C:
 	- La commande est la suivante:
-		- cbbackup http://<host>:<port> /backup-42 -u <login> -p <password> --single-node```
+		- cbbackup http://<host>:<port> /backup-42 -u <login> -p <password> --single-node
 
 ___
 # Faire l'IMPORTATION
