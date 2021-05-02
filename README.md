@@ -25,7 +25,7 @@ ___
 ## Inconvenients de VUE JS
 	- Pas de soutien GAFAM
 	- Faible structuration (Inconvenient pour les grands projets)
-	-	Un seul contributeur à plein temps
+	- Un seul contributeur à plein temps
 
 
 ## Avantages d'Angular JS
@@ -50,7 +50,7 @@ Mais en ce qui concerne mon avis personnel étant plus à l'aise avec la flexibi
 ___
 # Comment peut-on s’assurer qu’une application web soit compatible sur tous les devices actuels (Desktop, Tablet, Mobile) ?
 
-	- Pour s’assurer qu’une application web soit compatible avec tous les devices ; on peut soit la
+Pour s’assurer qu’une application web soit compatible avec tous les devices ; on peut soit la
 développer sur le web et utiliser des outils tels que ElectronJS, cordova ou phonegap pour l’adapter
 à chaque device, soit développer une PWA (Progressive Web Apps ) qui s’appuie sur les navigateurs
 et est utilisable par n’importe quel système. Les PWA sont développer en langage simple (HTML5,
@@ -63,13 +63,13 @@ ___
 # Faire le BACKUP
 	- Créer un dossier backup-42 à la racine dans mon cas c'est le C:
 	- La commande est la suivante:
-		- ```cbbackup http://<host>:<port> /backup-42 -u <login> -p <password> --single-node```
+		- cbbackup http://<host>:<port> /backup-42 -u <login> -p <password> --single-node```
 
 ___
 # Faire l'IMPORTATION
 	- Créer un dossier data_couchbase à la racine dans mon cas c'est ke C:
 	- Créer les buckets ```categories et articles```
 	- La commande est la suivante:
-		- ```cbimport json --format list -c http://<host>:<port> -u <login> -p <password> -d file:///data_couchbase/categories.json -b categories -g #UUID#```
-		- ```cbimport json --format list -c http://<host>:<port> -u <login> -p <password> -d file:///data_couchbase/articles.json -b articles -g #UUID#```
-		- NB: __Les json utilisés sont dans le dossier storage du projet GITHUB__
+		- cbimport json --format list -c http://<host>:<port> -u <login> -p <password> -d file:///data_couchbase/categories.json -b categories -g #UUID#
+		- cbimport json --format list -c http://<host>:<port> -u <login> -p <password> -d file:///data_couchbase/articles.json -b articles -g #UUID#
+		- NB: Les json utilisés sont dans le dossier storage du projet GITHUB
