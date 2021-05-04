@@ -173,7 +173,7 @@
     <!-- SEARCH RESULT SECTION -->
     <section class="search__result__container" :style="{'display': config.phaseOne.searchState}">
       <div class="search__result__card">
-        <div class="search__item__card" v-for="data in searchDatas" v-bind:key="data._id" @click="getArticleInfos(data._id)">
+        <div class="search__item__card" v-for="data in searchDatas" v-bind:key="data._id" @click="getArticleInfos(data.guid)">
           <div class="search__item__card__name">
             Name: &nbsp;{{ data.name }}
           </div>
